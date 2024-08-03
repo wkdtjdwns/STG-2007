@@ -26,5 +26,14 @@ public class Player : MonoBehaviour
         rigid.MovePosition(transform.position + move);
 
         transform.LookAt(transform.position + moveVec); //지정된 벡터를 향해서 회전시켜줌
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            print(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            print(2);
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) 
+            print(3);
+        else if(Input.GetKeyDown(KeyCode.Alpha4))
+            print(4);
     }
 }
