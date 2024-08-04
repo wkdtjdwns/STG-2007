@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class STGTest : STG
 {
-    private void Awake()
-    {
-        
-    }
-
     private void Update()
     {
         Move();
