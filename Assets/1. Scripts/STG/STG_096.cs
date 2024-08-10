@@ -44,7 +44,7 @@ public class STG_096 : STG
     }
 
     // STG 클래스의 Move() 메서드 오버라이딩
-    public void Move()
+    public override void Move()
     {
         transform.Translate(direction * speed * Time.deltaTime);
     }
