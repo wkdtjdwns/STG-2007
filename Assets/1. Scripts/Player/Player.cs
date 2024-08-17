@@ -16,11 +16,6 @@ public class Player : MonoBehaviour
        
     }
 
-    private void Start()
-    {
-        
-    }
-
     void Update()
     {
         float hAxis = Input.GetAxisRaw("Horizontal");
