@@ -33,93 +33,44 @@ public class Player : MonoBehaviour
 
 
         // 구현만 (추후에 줍거나 하는 수단이 생기면 다시 만들 예정)
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            for (int i = 1; i < images.Length; i++)
-            {
-                images[i].color = new Color(1, 1, 1, 0.3921569f);
-                items[i].SetActive(false);
-            }
-            images[0].color = new Color(0.1764706f, 0.1764706f, 0.1764706f, 0.5411765f);
-            items[0].SetActive(true);
-            hasItem = items[0].GetComponent <Item>();
-            
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            for (int i = 0; i < images.Length; i++)
-            {
-                if(i == 1)
-                    continue;
-                images[i].color = new Color(1, 1, 1, 0.3921569f);
-                items[i].SetActive(false);
-            }
-            images[1].color = new Color(0.1764706f, 0.1764706f, 0.1764706f, 0.5411765f);
-            items[1].SetActive(true);
-            hasItem = items[1].GetComponent<Item>();
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            for (int i = 0; i < images.Length; i++)
-            {
-                if (i == 2)
-                    continue;
-                images[i].color = new Color(1, 1, 1, 0.3921569f);
-                items[i].SetActive(false);
-            }
-            images[2].color = new Color(0.1764706f, 0.1764706f, 0.1764706f, 0.5411765f);
-            items[2].SetActive(true);
-            hasItem = items[2].GetComponent<Item>();
-
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            for (int i = 0; i < images.Length; i++)
-            {
-                if (i == 3)
-                    continue;
-                images[i].color = new Color(1, 1, 1, 0.3921569f);
-                items[i].SetActive(false);
-            }
-            images[3].color = new Color(0.1764706f, 0.1764706f, 0.1764706f, 0.5411765f);
-            items[3].SetActive(true);
-            hasItem = items[3].GetComponent<Item>();
-
-        }
-        else if(Input.GetKeyDown (KeyCode.Alpha5))
-        {
-            if (bagUsing)
-            {
-                for (int i = 0; i < images.Length - 1; i++)
-                {
-                    images[i].color = new Color(1, 1, 1, 0.3921569f);
-                    items[i].SetActive(false);
-                }
-                images[4].color = new Color(0.1764706f, 0.1764706f, 0.1764706f, 0.5411765f);
-                items[4].SetActive(true);
-                hasItem = items[4].GetComponent<Item>();
-            }
-        }
-        
+        if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchItem(0);
+        else if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchItem(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha3)) SwitchItem(2);
+        else if (Input.GetKeyDown(KeyCode.Alpha4)) SwitchItem(3);
+        else if (Input.GetKeyDown(KeyCode.Alpha5) && bagUsing) SwitchItem(4);
 
         if (hasItem != null)
         {
-            if(hasItem is Bag)
+            if (hasItem is Bag bag)
             {
                 if (!bagUsing)
                 {
                     hasItem.UseItem();
                     bagUsing = GameObject.FindObjectOfType<Bag>().bagUsing;
                 }
-
-                
             }
             else
             {
                 hasItem.UseItem();
             }
+        }
+    }
 
+    void SwitchItem(int index)
+    {
+        for (int i = 0; i < images.Length; i++)
+        {
+            if (i == index)
+            {
+                images[i].color = new Color(0.1764706f, 0.1764706f, 0.1764706f, 0.5411765f);
+                items[i].SetActive(true);
+                hasItem = items[i].GetComponent<Item>();
+            }
+            else
+            {
+                images[i].color = new Color(1, 1, 1, 0.3921569f);
+                items[i].SetActive(false);
+            }
         }
     }
 }
