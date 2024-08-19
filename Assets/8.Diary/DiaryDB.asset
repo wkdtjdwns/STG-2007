@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a98b6d40671e449b131bb57b9bac9e, type: 3}
+  m_Name: DiaryDB
+  m_EditorClassIdentifier: 
+  Diary:
+  - diaryIndex: 0
+    name: STG-9211
+    diary: "STG-9211\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 1
+    name: STG-173
+    diary: "STG-173\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 2
+    name: STG-371
+    diary: "STG-371\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 3
+    name: STG-469
+    diary: "STG-469\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 4
+    name: STG-096
+    diary: "STG-096\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 5
+    name: STG-6789
+    diary: "STG-6789\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 6
+    name: STG-3284
+    diary: "STG-3284\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 7
+    name: "\uBD80\uC790-1"
+    diary: "\uBD80\uC790-1\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 8
+    name: "\uBD80\uC790-2"
+    diary: "\uBD80\uC790-2\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
+  - diaryIndex: 9
+    name: STG-2007
+    diary: "STG-2007\uC758 \uC77C\uAE30 \uB0B4\uC6A9"
