@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
-{private PlayerMovement3D playerMovement3D;
+{
+    private PlayerMovement3D playerMovement3D;
     public GameObject[] items;
     public Image[] images;
     public Item hasItem;
@@ -23,16 +24,16 @@ public class Player : MonoBehaviour
 
         playerMovement3D.MoveTo(new Vector3(hAxis, 0, vAxis));
 
-        if (Input.GetKeyDown(KeyCode.Space)) //Á¡ÇÁ
+        if (Input.GetKeyDown(KeyCode.Space)) //ì í”„
             playerMovement3D.JumpTo();
 
         //Vector3 moveVec = new Vector3(hAxis, 0, vAxis).normalized;
         //Vector3 move = moveVec * speed * (isRun ? 2f : 1f) * Time.deltaTime;
         //rigid.MovePosition(transform.position + move);
-        //transform.LookAt(transform.position + moveVec); //ÁöÁ¤µÈ º¤ÅÍ¸¦ ÇâÇØ¼­ È¸Àü½ÃÄÑÁÜ
+        //transform.LookAt(transform.position + moveVec); //ì§€ì •ëœ ë²¡í„°ë¥¼ í–¥í•´ì„œ íšŒì „ì‹œì¼œì¤Œ
 
 
-        // ±¸Çö¸¸ (ÃßÈÄ¿¡ Áİ°Å³ª ÇÏ´Â ¼ö´ÜÀÌ »ı±â¸é ´Ù½Ã ¸¸µé ¿¹Á¤)
+        // êµ¬í˜„ë§Œ (ì¶”í›„ì— ì¤ê±°ë‚˜ í•˜ëŠ” ìˆ˜ë‹¨ì´ ìƒê¸°ë©´ ë‹¤ì‹œ ë§Œë“¤ ì˜ˆì •)
         if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchItem(0);
         else if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchItem(1);
         else if (Input.GetKeyDown(KeyCode.Alpha3)) SwitchItem(2);
