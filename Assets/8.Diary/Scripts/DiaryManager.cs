@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DiaryManager : MonoBehaviour
 {
     public int diaryIndex;
     public DiaryData[] diaryData;
     [SerializeField] private DiaryDB diaryDB;
+
+    [SerializeField] private GameObject diaryObj;
+    [SerializeField] private Text nameText;
+    [SerializeField] private Text indexText;
+    [SerializeField] private Text diaryText;
 
     private void Awake()
     {
@@ -22,6 +28,18 @@ public class DiaryManager : MonoBehaviour
             diaryData[i].name = diaryDB.Diary[i].name;
             diaryData[i].diary = diaryDB.Diary[i].diary;
         }
+    }
+
+    public void ShowDiary(int index)
+    {
+        nameText.text = diaryData[index].name;
+        indexText.text = index.ToString();
+        diaryText.text = diaryData[index].diary;
+    }
+
+    public void CloseDiary()
+    {
+        diaryObj.SetActive(false);
     }
 }
 

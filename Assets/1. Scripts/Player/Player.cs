@@ -6,19 +6,29 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     private PlayerMovement3D playerMovement3D;
+    private DiaryManager diaryManager;
     public GameObject[] items;
     public Image[] images;
     public Item hasItem;
     public bool bagUsing;
 
+    [Header("테스트 용도 나중에 지울 것")]
+    public int index = 0;
+
     private void Awake()
     {
         playerMovement3D = GetComponent<PlayerMovement3D>();
-       
+        diaryManager = GameObject.Find("DiaryManager").gameObject.GetComponent<DiaryManager>();
     }
 
     void Update()
     {
+        // 테스트 용도 나중에 지울 것
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SeeDiary(index++);
+        }
+
         float hAxis = Input.GetAxisRaw("Horizontal");
         float vAxis = Input.GetAxisRaw("Vertical");
 
@@ -73,5 +83,10 @@ public class Player : MonoBehaviour
                 items[i].SetActive(false);
             }
         }
+    }
+
+    private void SeeDiary(int index)
+    {
+        diaryManager.ShowDiary(index);
     }
 }

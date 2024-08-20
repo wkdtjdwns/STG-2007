@@ -693,7 +693,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 772736438}
-  - {fileID: 1931929066}
+  - {fileID: 1108828105}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1548,6 +1548,7 @@ MonoBehaviour:
   - {fileID: 716895368}
   hasItem: {fileID: 0}
   bagUsing: 0
+  index: 0
 --- !u!114 &809023123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,7 +2053,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1048201343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1210734429}
+        m_TargetAssemblyTypeName: DiaryManager, Assembly-CSharp
+        m_MethodName: CloseDiary
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1048201343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2243,6 +2256,42 @@ MonoBehaviour:
   target: {fileID: 809023121}
   spotlight: {fileID: 1213197078}
   attackThreshold: 5
+--- !u!1 &1108828104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108828105}
+  m_Layer: 5
+  m_Name: Diary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1108828105
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108828104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1931929066}
+  m_Father: {fileID: 287545031}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1210734428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2275,6 +2324,10 @@ MonoBehaviour:
   diaryIndex: 0
   diaryData: []
   diaryDB: {fileID: 11400000, guid: b1468e26e5f81d54bbc7ec9348033627, type: 2}
+  diaryObj: {fileID: 1931929065}
+  nameText: {fileID: 1994643104}
+  indexText: {fileID: 888422753}
+  diaryText: {fileID: 725851076}
 --- !u!4 &1210734430
 Transform:
   m_ObjectHideFlags: 0
@@ -3113,7 +3166,7 @@ GameObject:
   - component: {fileID: 1931929068}
   - component: {fileID: 1931929067}
   m_Layer: 5
-  m_Name: Diary
+  m_Name: Diary Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3126,14 +3179,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1931929065}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1699659431}
   - {fileID: 1382326948}
-  m_Father: {fileID: 287545031}
+  m_Father: {fileID: 1108828105}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
