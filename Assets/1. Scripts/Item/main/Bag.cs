@@ -23,7 +23,6 @@ public class Bag : Item
             {
                 images[i].transform.Translate(-85, 0,0);
             }
-
             images[4].enabled = true;  
             bagUsing = true;
         }

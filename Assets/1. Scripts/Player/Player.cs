@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     public Image[] images;
     public Item hasItem;
     public bool bagUsing;
+
+    public Animation anim;
 
     [Header("테스트 용도 나중에 지울 것")]
     public int index = 0;
@@ -49,7 +52,11 @@ public class Player : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3)) SwitchItem(2);
         else if (Input.GetKeyDown(KeyCode.Alpha4)) SwitchItem(3);
         else if (Input.GetKeyDown(KeyCode.Alpha5) && bagUsing) SwitchItem(4);
-
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            hasItem = items[5].GetComponent<Item>();
+            items[5].SetActive(true);
+        }
         if (hasItem != null)
         {
             if (hasItem is Bag bag)
@@ -57,12 +64,27 @@ public class Player : MonoBehaviour
                 if (!bagUsing)
                 {
                     hasItem.UseItem();
-                    bagUsing = GameObject.FindObjectOfType<Bag>().bagUsing;
+                    bagUsing = bag.bagUsing;
                 }
+                
             }
             else
             {
                 hasItem.UseItem();
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        // 
+        if (hasItem is Key key && other.CompareTag("Door"))
+        {
+            Animator doorAnimator = other.GetComponent<Animator>();
+            if (doorAnimator != null && Input.GetMouseButtonDown(0))
+            {
+                doorAnimator.SetTrigger("using_key");
+                key.UseItem();
+                items[5].SetActive(false);
             }
         }
     }
@@ -84,6 +106,8 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+
 
     private void SeeDiary(int index)
     {
