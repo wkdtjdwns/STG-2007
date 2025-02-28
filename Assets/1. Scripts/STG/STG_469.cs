@@ -21,12 +21,12 @@ public class STG_469 : STG
         float volume = GetMicVolume();
         //디폴트 : -90
         //마이크 크면 : -50 ~ -5
-        print("volume : " + volume);
+        //print("volume : " + volume);
         // 음량이 임계값을 넘으면 이벤트 실행  
         if(volume > threshold && !isOverThreshold)
         {
             isOverThreshold = true;
-            print("over");
+            //print("over");
         }
         else if(volume <= threshold)
         {

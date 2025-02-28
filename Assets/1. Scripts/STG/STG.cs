@@ -34,6 +34,7 @@ public class STG : MonoBehaviour
             {
                 // Player를 향한 방향 계산 및 이동
                 Vector3 direction = (target.position - transform.position).normalized;
+                transform.LookAt(target);
                 this.transform.position += direction * speed * Time.deltaTime;
             }
         }

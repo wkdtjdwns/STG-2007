@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class STG_371 : STG
 {
-    public Light spotlight;  // 몬스터가 반응할 빛
-    public float attackThreshold = 5.0f;  // 공격까지 필요한 시간
+    public Light spotlight;               // 몬스터가 반응할 빛
+    public float attackThreshold = 5;  // 공격까지 필요한 시간
 
     private bool isInLight = false;
-    private float timeInLight = 0f;//빛에 노출 되있는 시간
+    private float timeInLight = 0f;       //빛에 노출 되있는 시간
 
     void Update()
     {
